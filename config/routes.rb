@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-  get "agents/index"
-  get "agents/show"
-  get "champions/index"
-  get "champions/show"
   root 'welcome#index'
 
   resources :champions, only: [:index, :show]
-  resources :agents, only: [:index, :show]
+  resources :animes
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
