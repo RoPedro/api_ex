@@ -1,9 +1,10 @@
-<h1>Champions#index</h1>
-<p>Find me in app/views/champions/index.html.erb</p>
+<h1>Champions list</h1>
 
 <ul>
     <% @champions.each do |key, champ| %>
-        <li><%= champ['name'] %><br></li>
-        <li><%= champ['title'] %></li><br>
+        <li>
+            <!-- Passing only the ID of a champion when we are dealing with json -->
+            <%= link_to "#{champ['name']}", champion_path(champ['id']) %> 
+        </li>
     <% end %>
 </ul>
