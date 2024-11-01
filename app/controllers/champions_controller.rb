@@ -6,9 +6,9 @@ class ChampionsController < ApplicationController
   def show
     @champion = DataDragonService.champion_details(params[:id])
     if @champion
-      render json: @champion
+      Rails.logger.debug("Success retrieving champion")
     else
-      render json: { error: 'Champion not found' }, status: :not_found
+      Rails.logger.debug("Failed retrieving champion")
     end
   end
 end
